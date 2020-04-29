@@ -23,7 +23,60 @@
 <li><strong>把 up_dir 的所有項目複製到資料夾cd2020</strong></li>
 <li><strong>即可執行python wsgi.py編輯網站</strong></li>
 </ul><h2>WEEk2</h2>
-<h2>WEEk3</h2>
+<p><strong>將可攜系統中的 python3.7.3 更新至 python3.8.2 版本</strong></p>
+<p><strong>．收尋 <a href="https://www.python.org/">Python</a>官網。</strong><br/><strong><span color="#808080">．點選Downloads下的<a href="https://www.python.org/downloads/windows/">Windows</a>，並點選 <a href="https://www.python.org/downloads/release/python-382/">Latest Python 3 Release - Python 3.8.2</a>。</span><span color="#808080"><br/>．找到 <span><a href="https://www.python.org/ftp/python/3.8.2/python-3.8.2-amd64.exe">Windows x86-64 executable installer</a> </span>並下載。</span></strong><span color="#808080"><br/><strong>．開始下載，必須將<span> </span><span>pip</span>選項<span>取消</span></strong><br/></span></p>
+<p><strong><span color="#000000">．建立新的start.bat</span></strong></p>
+<p><strong>start.bat:</strong></p>
+<div>
+<table>
+<tbody>
+<tr>
+<td><span>@echo off</span><br/><span>set Disk=y</span><br/><span>subst %Disk%: "data"</span><br/><br/><span>%Disk%:</span><br/><br/><span>set HomePath=%Disk%:\home_mdecourse</span><br/><span>set HomeDrive=%Disk%:\home_mdecourse</span><br/><span>set Home=%Disk%:\home_mdecourse</span><br/><span>set USERPROFILE=%Disk%:\home_mdecourse</span><br/><br/><span>REM 將系統 Python 程式的 io 設為 utf-8</span><br/><span>set PYTHONIOENCODING="utf-8"</span><br/><br/><span>set PYTHONPATH=%Disk%:\py38\DLLs;%Disk%:\py38\Lib;%Disk%:\py38\Lib\site-packages;</span><br/><span>set PYTHONHOME=%Disk%:\py38</span><br/><br/><span>REM for flutter</span><br/><span>set java_home=%Disk%:\java\jdk8u222-b10</span><br/><span>set ANDROID_SDK_home=%Disk%:\home_mdecourse</span><br/><span>set GRADLE_USER_home=%Disk%:\home_mdecourse</span><br/><span>set ANDROID_SDK_ROOT=%Disk%:\android\sdk</span><br/><span>set ANDROID_Home=%Disk%:\android\sdk\tools</span><br/><br/><span>REM for putty</span><br/><span>set GIT_HOME=%CDisk%:\portablegit\bin\</span><br/><span>set GIT_SSH=%Disk%:\putty\plink.exe</span><br/><br/><span>set path_python=%Disk%:\py38;%Disk%:\py38\Scripts;</span><br/><span>set path_msys2=%Disk%:\msys64\mingw64\bin;</span><br/><span>REM coreutils is for compiling fossil scm</span><br/><span>set path_coreutils=%Disk%:\coreutils-5.3.0\bin;%Disk%:\depends22_x64;</span><br/><span>set path_tcc=%Disk%:\tcc;</span><br/><span>set path_cmake=%Disk%:\cmake-3.10.1-win64-x64\bin;</span><br/><span>set path_nodejs=%Disk%:\nodejs;%Disk%:\nodejs\appdata\roaming\npm;</span><br/><span>set path_git=%Disk%:\portablegit\bin;</span><br/><span>set path_xming=%Disk%:\Xming;</span><br/><span>set path_latex=%Disk%:\Pandoc;%Disk%:\TinyTeX\bin\win32;</span><br/><span>set path_flutter=%Disk%:\java\jdk8u222-b10\bin;%Disk%:\flutter\bin;%Disk%:\Android\sdk;%Disk%:\Android\sdk\tools;%Disk%:\Android\sdk\tools\bin;%Disk%:\Android\sdk\platform-tools;%Disk%:\flutter\bin\cache\dart-sdk\bin;%Disk%:\vscode;</span><br/><span>set path_putty=%Disk%:\putty;</span><br/><br/><span>path=%Disk%:;%path_python%;%path_msys2%;%path_tcc%;%path_git%;%path_cmake%;%path_coreutils%;%path_flutter%;%path_putty%;%path_latex%;%path%;</span><br/><br/><span>start /MIN cmd.exe</span><br/><span>start /MIN cmd.exe</span><br/><span>start /MIN cmd.exe</span><br/><span>start /MIN cmd.exe</span><br/><br/><span>start /MIN %Disk%:\wscite415\wscite\SciTE.exe</span><br/><span>start /MIN %Disk%:\wscite415\wscite\SciTE.exe</span><br/><br/><br/><span>Exit</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>．執行指令，將python3.8.2版本缺少的模組下載下來。</strong></p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_583434">
+<table border="0" cellpadding="0" cellspacing="0" style="width: 531px;">
+<tbody>
+<tr>
+<td class="gutter" style="width: 27.4px;">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code" style="width: 501.6px;">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py plain">python get</code><code class="py keyword">-</code><code class="py plain">pip.py</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div></div>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_220325">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr style="height: 47.8px;">
+<td class="gutter" style="height: 47.8px;">
+<div class="line number1 index0 alt2">2</div>
+</td>
+<td class="code" style="height: 47.8px;">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py plain">pip install flask bs4 lxml pelican markdown flask_cors leo</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><strong>．下載MSYS2 <a class="button" href="http://repo.msys2.org/distrib/x86_64/msys2-x86_64-20190524.exe">msys2-x86_64-20190524.exe</a> 至data下。</strong></p>
+<p><strong>．下載SciTE系統 <a href="https://www.scintilla.org/wscite432.zip">full 64-bit download</a>，下載完後解壓縮至data下的wscite432。</strong></p>
+<p><strong>．下載PortableGit <a href="https://github.com/git-for-windows/git/releases/download/v2.25.1.windows.1/PortableGit-2.25.1-64-bit.7z.exe">64-bit Git for Windows Portable</a> 至 portablegit下。<br/><span color="#000000">．安裝pip，到</span><a href="https://bootstrap.pypa.io/get-pip.py">https://bootstrap.pypa.io/get-pip.py</a>頁面，另存新檔到data下。</strong></p><h2>WEEk3</h2>
 <h2>WEEk4</h2>
 <h2>WEEk5</h2>
 <h2>WEEk6</h2>
